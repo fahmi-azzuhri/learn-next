@@ -2,6 +2,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
+  status: boolean;
+  statusCode: number;
   data: {
     id: number;
     name: string;
@@ -28,5 +30,5 @@ export default function handler(
       size: "s",
     },
   ];
-  res.status(200).json({ data });
+  res.status(200).json({ status: true, statusCode: 200, data });
 }
